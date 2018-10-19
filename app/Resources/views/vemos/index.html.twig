@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Vemos list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Tel</th>
+                <th>Cargo</th>
+                <th>Cargo2</th>
+                <th>Cargo1</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for vemo in vemos %}
+            <tr>
+                <td><a href="{{ path('vemos_show', { 'id': vemo.id }) }}">{{ vemo.nombre }}</a></td>
+                <td>{{ vemo.apellido }}</td>
+                <td>{{ vemo.tel }}</td>
+                <td>{{ vemo.cargo }}</td>
+                <td>{{ vemo.cargo2 }}</td>
+                <td>{{ vemo.cargo1 }}</td>
+                <td>{{ vemo.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('vemos_show', { 'id': vemo.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('vemos_edit', { 'id': vemo.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('vemos_new') }}">Create a new vemo</a>
+        </li>
+    </ul>
+{% endblock %}

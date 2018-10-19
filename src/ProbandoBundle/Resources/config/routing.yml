@@ -1,0 +1,15 @@
+probando_ProbandoBundle:
+    resource: "@ProbandoBundle/Resources/config/routing/vemos.yml"
+    prefix:   /vemos
+probando_ProbandoBundle2:
+    resource: "@ProbandoBundle/Resources/config/routing/municipalidad.yml"
+    prefix:   /muni    
+
+
+
+probando_homepage:
+    path:     /
+    defaults: { _controller: ProbandoBundle:Default:index }
+
+
+
